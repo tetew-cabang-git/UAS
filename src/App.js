@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Button, Form } from 'react-bootstrap'
 import Axios from "axios";
 import "./style.css";
 
+// kalo error install react-router-dom, react-bootstrap bootstrap di direktori projeknya
+// npm install react-router-dom
+// npm install react-bootstrap bootstrap
 
 export default class App extends React.Component {
   state = {
@@ -37,9 +41,9 @@ export default class App extends React.Component {
     return ( 
       <div className = "container" >
         <h1>Corona Update</h1>
-        <select>
+        <Form.Control as="select">
           {this.renderCountryOptions()}
-        </select>
+        </Form.Control>
         <div class="flex">
           <div className="box confirmed">
             <h3>Kasus dikonfirmasi</h3>
@@ -54,6 +58,7 @@ export default class App extends React.Component {
             <h4> {this.state.deaths} </h4>
           </div>
         </div>
+        <div></div>
       </div>
     );
   }
