@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Form } from 'react-bootstrap'
+import { Button, Container, Form, Row, Col } from 'react-bootstrap'
 import Axios from "axios";
 import "./style.css";
 
@@ -27,7 +27,7 @@ export default class App extends React.Component {
       confirmed: resApi.data.confirmed.value,
       recovered: resApi.data.recovered.value,
       deaths: resApi.data.deaths.value,
-     countries: count
+      countries: count
     });
   }
 
@@ -39,27 +39,39 @@ export default class App extends React.Component {
 
   render() {
     return ( 
-      <div className = "container" >
-        <h1>Corona Update</h1>
-        <Form.Control as="select">
+      <Container>
+        {/* <Form.Control as="select">
           {this.renderCountryOptions()}
-        </Form.Control>
-        <div class="flex">
-          <div className="box confirmed">
+        </Form.Control> */}
+        <h1>Covid-19 Update</h1>
+        <Row className="flex">
+          <Col md={4} className="box confirmed">
             <h3>Kasus dikonfirmasi</h3>
             <h4> {this.state.confirmed} </h4>
-          </div>
-          <div className="box recovered">
+          </Col>
+          <Col md={4} className="box recovered">
             <h3>Kasus Recovered</h3>
             <h4> {this.state.recovered} </h4>
-          </div>
-          <div className="box deaths">
+          </Col>
+          <Col md={4} className="box deaths">
             <h3>Kasus Meninggal</h3>
             <h4> {this.state.deaths} </h4>
-          </div>
-        </div>
-        <div></div>
-      </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col style={{borderRight:'1px solid black'}}>
+            <Button style={{width:'70%', height:'150px', fontSize:'35px'}} variant="primary">Global</Button>
+          </Col>
+          <Col className="col-md-6">
+            <Button style={{width:'70%', height:'150px', fontSize:'35px'}} variant="danger">Indonesia</Button>
+          </Col>
+        </Row>
+        <Row style={{marginTop:'10%'}}>
+          <Col>
+          <h1>About Us</h1>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
