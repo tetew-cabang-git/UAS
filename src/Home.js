@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Container, Form, Row, Col } from 'react-bootstrap'
-import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Axios from "axios";
 import "./style.css";
 import Global from './Global'
@@ -45,9 +45,6 @@ export default class Home extends React.Component {
   render() {
     return ( 
       <Container>
-        {/* <Form.Control as="select">
-          {this.renderCountryOptions()}
-        </Form.Control> */}
         <h1>Covid-19 Update</h1>
         <Row className="flex">
           <Col md={4} className="box confirmed">

@@ -30,20 +30,26 @@
 .box.confirmed {
     padding: 1em;
     border: 1px solid #c7b511;
-    background: #d4b60a;
+    background: #F8961E;
 
 }
 
 .box.recovered {
     padding: 1em;
     border: 1px solid #cfffc5;
-    background: #00c451
+    background: #90BE6D
 }
 
 .box.deaths {
     padding: 1em;
     border: 1px solid #c23838;
-    background: #e08787
+    background: #F94144;
+}
+
+.box.rawat {
+    padding: 1em;
+    border: 1px solid #ff7028;
+    background: #F9844A;
 }
 
 @media screen and (min-width: 900px) {
@@ -55,5 +61,11 @@
         padding: 2em 1em;
         max-width: 300px;
         line-height: normal;
+    }
+}
+
+@media screen and (min-width: 600px){
+    .flex{
+        flex-wrap: wrap;
     }
 }
