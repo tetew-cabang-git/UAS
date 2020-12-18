@@ -26,8 +26,12 @@ export default class App extends React.Component {
                                     <Card.Text style={{fontSize:'75%'}}>00000042520</Card.Text>
                                     <Card.Text>
                                         <Row>
-                                            <Col md={6}><Button variant="Info"><FontAwesomeIcon icon={["fab","github"]}/></Button></Col>
-                                            <Col md={6}><Button variant="Info"><FontAwesomeIcon icon={["fab","instagram"]}/></Button></Col>
+                                            <Col md={6}><Button variant="Info" onClick={(e) => {
+                                                e.preventDefault()
+                                                window.open('https://github.com/faisalapt')}}><FontAwesomeIcon icon={["fab","github"]}/></Button></Col>
+                                            <Col md={6}><Button variant="Info" onClick={(e) => {
+                                                e.preventDefault()
+                                                window.open('https://instagram.com/faisalapt')}}><FontAwesomeIcon icon={["fab","instagram"]}/></Button></Col>
                                         </Row>
                                     </Card.Text>
                                 </Card.Body>
@@ -41,8 +45,16 @@ export default class App extends React.Component {
                                     <Card.Text style={{fontSize:'75%'}}>00000041342</Card.Text>
                                     <Card.Text>
                                         <Row>
-                                            <Col md={6}><Button variant="Info"><FontAwesomeIcon icon={["fab","github"]}/></Button></Col>
-                                            <Col md={6}><Button variant="Info"><FontAwesomeIcon icon={["fab","instagram"]}/></Button></Col>
+                                            <Col md={6}><Button variant="Info" onClick={(e) => {
+                                                e.preventDefault()
+                                                window.open('https://github.com/xrnvx')}}><FontAwesomeIcon icon={["fab","github"]}/>
+                                                </Button>
+                                            </Col>
+                                            <Col md={6}><Button variant="Info" onClick={(e) => {
+                                                e.preventDefault()
+                                                window.open('https://instagram.com/xrnvx_')}}><FontAwesomeIcon icon={["fab","instagram"]}/>
+                                                </Button>
+                                            </Col>
                                         </Row>
                                     </Card.Text>
                                 </Card.Body>
@@ -56,8 +68,16 @@ export default class App extends React.Component {
                                     <Card.Text style={{fontSize:'75%'}}>00000042493</Card.Text>
                                     <Card.Text>
                                         <Row>
-                                            <Col md={6}><Button variant="Info"><FontAwesomeIcon icon={["fab","github"]}/></Button></Col>
-                                            <Col md={6}><Button variant="Info"><FontAwesomeIcon icon={["fab","instagram"]}/></Button></Col>
+                                            <Col md={6}><Button variant="Info" onClick={(e) => {
+                                                e.preventDefault()
+                                                window.open('https://github.com/madj14')}}><FontAwesomeIcon icon={["fab","github"]}/>
+                                                </Button>
+                                            </Col>
+                                            <Col md={6}><Button variant="Info" onClick={(e) => {
+                                                e.preventDefault()
+                                                window.open('https://instagram.com/maldiid')}}><FontAwesomeIcon icon={["fab","instagram"]}/>
+                                                </Button>
+                                            </Col>
                                         </Row>
                                     </Card.Text>
                                 </Card.Body>
@@ -71,8 +91,16 @@ export default class App extends React.Component {
                                     <Card.Text style={{fontSize:'75%'}}>00000041910</Card.Text>
                                     <Card.Text>
                                         <Row>
-                                            <Col md={6}><Button variant="Info"><FontAwesomeIcon icon={["fab","github"]}/></Button></Col>
-                                            <Col md={6}><Button variant="Info"><FontAwesomeIcon icon={["fab","instagram"]}/></Button></Col>
+                                            <Col md={6}><Button variant="Info" onClick={(e) => {
+                                                e.preventDefault()
+                                                window.open('https://github.com/rafifwhy')}}><FontAwesomeIcon icon={["fab","github"]}/>
+                                                </Button>
+                                            </Col>
+                                            <Col md={6}><Button variant="Info" onClick={(e) => {
+                                                e.preventDefault()
+                                                window.open('https://instagram.com/rafifwahyuh')}}><FontAwesomeIcon icon={["fab","instagram"]}/>
+                                                </Button>
+                                            </Col>
                                         </Row>
                                     </Card.Text>
                                 </Card.Body>
