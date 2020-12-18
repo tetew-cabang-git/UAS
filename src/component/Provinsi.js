@@ -44,7 +44,7 @@ export default function Provinsi(){
             <Container>
                 <h1>Data Per Provinsi</h1>
                 <Select options={renderProv} placeholder="Select One" onChange={getProv}/>
-                {pilih !== '' && (<h4> Provinsi yang dipilih: {provinsi}</h4>)}
+                {pilih !== '' && (<div className="prov"><h4> Provinsi yang dipilih: {provinsi}</h4></div>)}
                 {pilih !== '' && (<Row className="flex">
                     <Col md={4} className="box confirmed">
                         <h3>Positif</h3>

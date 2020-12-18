@@ -1,13 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@600&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+.home{
+    position: relative;
+    background: #F5F5F5;
+}
+
 .container {
     padding: 1em;
     width: 100%;
     text-align: center;
+}
+
+.title{
+    font-family: 'Saira', sans-serif;
+    font-weight: normal;
+    margin-top: 4%;
 }
 
 .flex {
@@ -52,7 +64,32 @@
     background: #F9844A;
 }
 
-@media screen and (min-width: 900px) {
+.header{
+    width: 102.6%;
+    height: 80px;
+    background: #577590;
+}
+
+.header h2{
+    margin: auto;
+    color: #F9C74F;
+    font-family: Saira;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.prov{
+    margin: 5% auto auto auto;
+    width: 40%;
+    height: 36%;
+    background: cornflowerblue;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(32,90,160);
+}
+
+@media screen and (min-width: 768px) {
     .flex {
         flex-wrap: nowrap;
     }
@@ -66,6 +103,12 @@
 
 @media screen and (min-width: 600px){
     .flex{
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+    }
+
+    .box {
+        padding: 2em 1em;
+        max-width: 300px;
+        line-height: normal;
     }
 }
