@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+}
+
+.flex {
+    min-height: 50vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.box {
+    width: 100%;
+    margin: 3px;
+    min-width: 200px;
+    padding: 0.5em;
+    border-radius: 5px;
+    font-size: 1.5em;
+}
+
+.box.confirmed {
+    padding: 1em;
+    border: 1px solid #c7b511;
+    background: #d4b60a;
+
+}
+
+.box.recovered {
+    padding: 1em;
+    border: 1px solid #cfffc5;
+    background: #00c451
+}
+
+.box.deaths {
+    padding: 1em;
+    border: 1px solid #c23838;
+    background: #e08787
+}
+
+@media screen and (min-width: 900px) {
+    .flex {
+        flex-wrap: nowrap;
+    }
+
+    .box {
+        padding: 2em 1em;
+        max-width: 300px;
+        line-height: normal;
+    }
+}
+
+@media screen and (max-width: 600px){
+    
+}

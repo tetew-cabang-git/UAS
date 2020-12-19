@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Saira';
+}
+
+.home{
+    position: relative;
+    background: #F5F5F5;
+}
+
+.aboutus h1:hover{
+    background-color: #F9C74F;
+}
+
+.container {
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+}
+
+.title{
+    font-family: 'Saira', sans-serif;
+    font-weight: normal;
+    margin-top: 4%;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.box {
+    width: 100%;
+    margin: 3px;
+    min-width: 200px;
+    padding: 0.5em;
+    border-radius: 5px;
+    font-size: 1.5em;
+}
+
+.box.confirmed {
+    padding: 1em;
+    border: 1px solid #c7b511;
+    background: #F8961E;
+
+}
+
+.box.recovered {
+    padding: 1em;
+    border: 1px solid #cfffc5;
+    background: #90BE6D
+}
+
+.box.deaths {
+    padding: 1em;
+    border: 1px solid #c23838;
+    background: #F94144;
+}
+
+.box.rawat {
+    padding: 1em;
+    border: 1px solid #ff7028;
+    background: #F9844A;
+}
+
+.header{
+    margin: 0;
+    width: 100%;
+    height: 80px;
+    background: #577590;
+}
+
+.header h2{
+    margin: auto;
+    color: #F9C74F;
+    font-family: Saira;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.header h2:hover{
+    color: #577590;
+    background-color: #F9C74F;
+}
+
+.prov{
+    margin: 5% auto auto auto;
+    width: 40%;
+    height: 36%;
+    background: cornflowerblue;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(32,90,160);
+}
+
+.card-footer{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+@media screen and (min-width: 768px) {
+    .flex {
+        flex-wrap: nowrap;
+    }
+    .tombol{
+        font-size: 13px;
+    }
+    .box {
+        padding: 2em 1em;
+        max-width: 300px;
+        line-height: normal;
+    }
+} 
+
+@media screen and (min-width: 600px){
+    .flex{
+        flex-wrap: nowrap;
+    }
+    .batas{
+        border-right: 1px solid black;
+    }
+    .box {
+        padding: 2em 1em;
+        max-width: 300px;
+        line-height: normal;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .batas{
+        border-bottom: 0px solid black;
+        margin-bottom: 10%;
+        height: 25vh;
+    }
+    .header{
+        width: 100%;
+    }    
+}
