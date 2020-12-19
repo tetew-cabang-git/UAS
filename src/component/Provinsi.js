@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Table } from 'react-bootstrap';
 import "../style.css";
 import AnimatedNumber from "animated-number-react";
 import Select from 'react-select'
+import Pagin from './Pagin'
 
 export default function Provinsi(){
     const [prov, setProv] = useState([]);
@@ -13,7 +14,6 @@ export default function Provinsi(){
     const [meninggal, setMeninggal] = useState(0);
     const [rawat, setRawat] = useState(0);
     const [provinsi, setProvinsi] = useState('');
-
     useEffect(() => {
         Axios.get("http://apicovid19indonesia-v2.vercel.app/api/indonesia/provinsi").then((res) => {
             setProv(res.data)
@@ -63,6 +63,7 @@ export default function Provinsi(){
                         <h4> <AnimatedNumber value={rawat} formatValue={thousandSeparator}/> </h4>
                     </Col>
                 </Row>)}
+                <Pagin/>
             </Container>
         )
     }

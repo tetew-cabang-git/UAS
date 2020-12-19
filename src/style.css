@@ -10,6 +10,10 @@
     background: #F5F5F5;
 }
 
+.row{
+    margin: 0;
+}
+
 .container {
     padding: 1em;
     width: 100%;
@@ -65,12 +69,13 @@
 }
 
 .header{
-    width: 102.6%;
+    width: 100%;
     height: 80px;
     background: #577590;
 }
 
-.header h2{
+.header .jud{
+    text-align: center;
     margin: auto;
     color: #F9C74F;
     font-family: Saira;
@@ -94,6 +99,10 @@
         flex-wrap: nowrap;
     }
 
+    .batas{
+        border-right: 1px solid black;
+    }
+
     .box {
         padding: 2em 1em;
         max-width: 300px;
@@ -110,5 +119,12 @@
         padding: 2em 1em;
         max-width: 300px;
         line-height: normal;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .batas{
+        border-bottom: 0px solid black;
+        height: 23vh;
     }
 }

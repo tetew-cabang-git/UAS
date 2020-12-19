@@ -68,22 +68,22 @@ export default function Indonesia(){
     return(
       <Container>
         <Row className="flex">
-          <Col md={4} className="box confirmed">
+          <Col md={3} className="box confirmed">
             <h3>Positif</h3>
             <h4> <AnimatedNumber value={positif} formatValue={thousandSeparator}/> </h4>
             <h5> <AnimatedNumber value={upPositif} formatValue={thousandSeparator}/> </h5>
           </Col>
-          <Col md={4} className="box recovered">
+          <Col md={3} className="box recovered">
             <h3>Sembuh</h3>
             <h4> <AnimatedNumber value={sembuh} formatValue={thousandSeparator}/> </h4>
             <h5> <AnimatedNumber value={upSembuh} formatValue={thousandSeparator}/> </h5>
           </Col>
-          <Col md={4} className="box deaths">
+          <Col md={3} className="box deaths">
             <h3>Meninggal</h3>
             <h4> <AnimatedNumber value={meninggal} formatValue={thousandSeparator}/> </h4>
             <h5> <AnimatedNumber value={upMeniggal} formatValue={thousandSeparator}/> </h5>
           </Col>
-          <Col md={4} className="box rawat">
+          <Col md={3} className="box rawat">
             <h3>Dirawat</h3>
             <h4> <AnimatedNumber value={rawat} formatValue={thousandSeparator}/> </h4>
             <h5> <AnimatedNumber value={upRawat} formatValue={thousandSeparator}/> </h5>

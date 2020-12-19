@@ -6,6 +6,7 @@ import "./style.css";
 import AnimatedNumber from 'animated-number-react';
 import Global from './Global'
 import Indonesia from './Indonesia'
+import Aboutus from './Aboutus'
 
 // kalo error install react-router-dom, react-bootstrap bootstrap di direktori projeknya
 // npm install react-router-dom
@@ -13,6 +14,7 @@ import Indonesia from './Indonesia'
 // npm install animated-number-react
 // npm install recharts
 // npm intstall react-select
+// npm install react-bootstrap-table-next react-bootstrap-table2-pagination
 
 export default class Home extends React.Component {
   state = {
@@ -41,9 +43,6 @@ export default class Home extends React.Component {
   render() {
     return ( 
       <Container className="home">
-        <Row className="header">
-          <h2>DATA COVID-19.</h2>
-        </Row>
         <h2 className="title">GLOBAL.</h2>
         <Row className="flex">
           <Col md={4} className="box confirmed">
@@ -59,17 +58,17 @@ export default class Home extends React.Component {
             <h4> <AnimatedNumber value={this.state.deaths} formatValue={this.thousandSeparator}/> </h4>
           </Col>
         </Row>
-        <Row>
-          <Col style={{borderRight:'1px solid black'}}>
+        <Row className="flex">
+          <Col md={6} className="batas">
             <Link to="/Global"><Button style={{width:'70%', height:'150px', fontSize:'35px'}} variant="primary">Data Negara Lain.</Button></Link>
           </Col>
-          <Col className="col-md-6">
+          <Col md={6}>
             <Link to="/Indonesia"><Button style={{width:'70%', height:'150px', fontSize:'35px'}} variant="danger">Indonesia.</Button></Link>
           </Col>
         </Row>
         <Row style={{marginTop:'10%'}}>
           <Col>
-          <h1>About Us</h1>
+          <Link to="/Aboutus"><h1>About Us</h1></Link>
           </Col>
         </Row>
         <Switch>
@@ -78,6 +77,9 @@ export default class Home extends React.Component {
             </Route>
             <Route exact path='/Indonesia'>
                 <Indonesia/>
+            </Route>
+            <Route exact path='/Aboutus'>
+              <Aboutus/>
             </Route>
         </Switch>
       </Container>
