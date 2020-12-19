@@ -3,6 +3,7 @@ import { Route, Switch, Link } from 'react-router-dom';
 import Home from './Home'
 import Global from './Global'
 import Indonesia from './Indonesia'
+import Aboutus from './Aboutus'
 
 export default class App extends React.Component{
     render(){
@@ -16,6 +17,9 @@ export default class App extends React.Component{
                 </Route>
                 <Route exact path='/Indonesia'>
                     <Indonesia/>
+                </Route>
+                <Route exact path='/Aboutus'>
+                    <Aboutus/>
                 </Route>
             </Switch>
         )

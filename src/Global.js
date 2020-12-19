@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Row, Col } from 'react-bootstrap'
 import Axios from "axios";
-import { Container, Form } from 'react-bootstrap'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 import {
     ResponsiveContainer,
     AreaChart, 
@@ -14,7 +14,12 @@ import {
     Legend,
 } from 'recharts';
 import AnimatedNumber from 'animated-number-react'
-import Select from 'react-select';
+import Select from 'react-select'
+import Moment from'react-moment'
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+library.add(fas);
 
 function convertDate(tanggal){
     const date = new Date(tanggal);
@@ -31,7 +36,8 @@ export default function Global() {
     const [death, setDeath] = useState(0);
     const [countries, setCountries] = useState([]);
     const [country, setCountry] = useState('')
-    const [daily, setDaily] = useState([]);
+    const [daily, setDaily] = useState([])
+    const [lastUpdate, setlastUpdate] = useState("");
 
     useEffect(() => {
         Axios.get('https://covid19.mathdro.id/api/countries').then((res) => {
@@ -40,14 +46,10 @@ export default function Global() {
         Axios.get('https://covid19.mathdro.id/api/daily').then((res) => {
             setDaily(res.data)
         })
-        if(country !== ''){
-            Axios.get(`https://covid19.mathdro.id/api/countries/${country}`).then((res) => {
-                setConfirmed(res.data.confirmed.value)
-                setRecover(res.data.recovered.value)
-                setDeath(res.data.deaths.value)
-            })
-        }
-    },[countries, daily, confirmed, recover, death])
+        Axios.get('https://covid19.mathdro.id/api/').then((res) =>{
+            setlastUpdate(res.data.lastUpdate)
+        })
+    },[countries, daily])
 
 
     let renderCountry = countries.map((country, i) => (
@@ -58,6 +60,15 @@ export default function Global() {
         setCountry(e.value)
     }
 
+    useEffect(() => {
+        if(country !== ''){
+            Axios.get(`https://covid19.mathdro.id/api/countries/${country}`).then((res) => {
+                setConfirmed(res.data.confirmed.value)
+                setRecover(res.data.recovered.value)
+                setDeath(res.data.deaths.value)
+            })
+        }
+    },[country, confirmed, recover, death])
 
     const thousandSeparator = (value) => {
         return value.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -71,6 +82,9 @@ export default function Global() {
         return ( 
             <Container>
                 <h1>Covid-19 Update</h1>
+                <div>
+                    <h4>Last Update: <Moment date={lastUpdate} format="DD MMM YYYY hh:mm"></Moment></h4>
+                </div>
                 <ResponsiveContainer width="100%" aspect={2}>
                     <AreaChart
                         width={700}
@@ -92,24 +106,25 @@ export default function Global() {
                         <Area type="monotone" dataKey="deltaConfirmed" stroke="#d4b60a" stackId="1" name="Positive" fillOpacity={1} fill="url(#colorPos)" />
                     </AreaChart>
                 </ResponsiveContainer>
+                <h1 style={{marginTop: "5%"}}>Data per Countries</h1>
                 <Select options={renderCountry} onChange={getCountry}/>
-                {country !== '' && (<Row className="flex">
+                {country !== '' &&(<Row className="flex">
                     <Col md={4} className="box confirmed">
-                        <h3>Kasus dikonfirmasi</h3>
+                        <h3>🤒Positive.</h3>
                         <h4> <AnimatedNumber value={confirmed} formatValue={thousandSeparator}/> </h4>
                     </Col>
                     <Col md={4} className="box recovered">
-                        <h3>Kasus Recovered</h3>
+                        <h3>💉Recovered.</h3>
                         <h4> <AnimatedNumber value={recover} formatValue={thousandSeparator}/> </h4>
                     </Col>
                     <Col md={4} className="box deaths">
-                        <h3>Kasus Meninggal</h3>
+                        <h3>☠️Death.</h3>
                         <h4> <AnimatedNumber value={death} formatValue={thousandSeparator} /> </h4>
                     </Col>
-                </Row>)}
+                    </Row>)}
                     <Row style={{marginTop:'10%'}}>
                     <Col>
-                        <Link to="/"><Button>Back To Home</Button></Link>
+                        <Link to="/"><Button><FontAwesomeIcon icon={["fas", "angle-left"]}/> Back To Home</Button></Link>
                     </Col>
                 </Row>
             </Container>

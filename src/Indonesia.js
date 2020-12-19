@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import Home from './Home';
 import Axios from "axios";
-import { Container, Table, Col, Row, Form, Button, Navbar, NavbarBrand } from 'react-bootstrap';
+import { Container, Col, Row, Button } from 'react-bootstrap';
 import AnimatedNumber from "animated-number-react";
 import { 
   ResponsiveContainer,
@@ -17,6 +17,10 @@ import {
 import "./style.css";
 import Provinsi from './component/Provinsi'
 import Moment from 'react-moment';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+library.add(fas);
 
 function convertDate(tanggal) {
   const date = new Date(tanggal);
@@ -66,25 +70,26 @@ export default function Indonesia(){
       key.tanggal = tanggalBaru
     });
     return(
-      <Container>
-        <Row className="flex">
+      <Container className="indonesia">
+        <h2>Indonesia Report.</h2>
+        <Row className="flex" style={{margin:"auto auto 5% auto"}}>
           <Col md={3} className="box confirmed">
-            <h3>Positif</h3>
+            <h3>🤒Positive.</h3>
             <h4> <AnimatedNumber value={positif} formatValue={thousandSeparator}/> </h4>
             <h5> <AnimatedNumber value={upPositif} formatValue={thousandSeparator}/> </h5>
           </Col>
           <Col md={3} className="box recovered">
-            <h3>Sembuh</h3>
+            <h3>💉Recovered.</h3>
             <h4> <AnimatedNumber value={sembuh} formatValue={thousandSeparator}/> </h4>
             <h5> <AnimatedNumber value={upSembuh} formatValue={thousandSeparator}/> </h5>
           </Col>
           <Col md={3} className="box deaths">
-            <h3>Meninggal</h3>
+            <h3>☠️Death.</h3>
             <h4> <AnimatedNumber value={meninggal} formatValue={thousandSeparator}/> </h4>
             <h5> <AnimatedNumber value={upMeniggal} formatValue={thousandSeparator}/> </h5>
           </Col>
           <Col md={3} className="box rawat">
-            <h3>Dirawat</h3>
+            <h3>🏥Quarantined.</h3>
             <h4> <AnimatedNumber value={rawat} formatValue={thousandSeparator}/> </h4>
             <h5> <AnimatedNumber value={upRawat} formatValue={thousandSeparator}/> </h5>
           </Col>
@@ -99,13 +104,13 @@ export default function Indonesia(){
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="positif" stroke="#d4b60a" activeDot={{ r: 8 }} />
-            <Line type="monotone" dataKey="sembuh" stroke="#00c451" activeDot={{ r: 7}} />
-            <Line type="monotone" dataKey="meninggal" stroke="#e08787" activeDot={{ r: 6}} />
+            <Line type="monotone" dataKey="positif" name="Positive" stroke="#d4b60a" activeDot={{ r: 8 }} />
+            <Line type="monotone" dataKey="sembuh" name="Recovered" stroke="#00c451" activeDot={{ r: 7}} />
+            <Line type="monotone" dataKey="meninggal" name="Death" stroke="#e08787" activeDot={{ r: 6}} />
           </LineChart>
         </ResponsiveContainer>
         <Provinsi/>
-        <Link to="/"><Button>Back To Home</Button></Link>
+        <Link to="/"><Button><FontAwesomeIcon icon={["fas", "angle-left"]}/> Back To Home</Button></Link>
         <Switch>
           <Route exact path="/">
             <Home/>
