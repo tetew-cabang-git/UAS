@@ -75,7 +75,7 @@ export default function Global() {
     }
 
     if(daily){
-        daily.map((key) => {
+        daily.forEach((key) => {
             const tanggalBaru = convertDate(key.reportDate)
             key.reportDate = tanggalBaru
         });

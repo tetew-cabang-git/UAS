@@ -65,7 +65,7 @@ export default function Indonesia(){
   }  
 
   if(dataNasional){
-    dataNasional.map((key) => {
+    dataNasional.forEach((key) => {
       const tanggalBaru = convertDate(key.tanggal)
       key.tanggal = tanggalBaru
     });
