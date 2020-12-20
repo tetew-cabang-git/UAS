@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Container, Row, Col, Card } from "react-bootstrap";
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Apip from "./img/apip.jpeg";
 import Pesal from "./img/pesal.jpeg";
 import Ibnu from "./img/ibnu.jpeg";

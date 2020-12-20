@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Row, Col } from "react-bootstrap";
 import Axios from "axios";
 import { Container } from "react-bootstrap";
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   ResponsiveContainer,
   AreaChart,
