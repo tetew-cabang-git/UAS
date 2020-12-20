@@ -1,13 +1,12 @@
 import React from "react";
 import { Button, Container, Row, Col, Card } from "react-bootstrap";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 import Apip from "./img/apip.jpeg";
 import Pesal from "./img/pesal.jpeg";
 import Ibnu from "./img/ibnu.jpeg";
 import Aldi from "./img/aldi.jpeg";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 library.add(fab);
 
@@ -26,7 +25,9 @@ export default class App extends React.Component {
                   <Card.Title>
                     <center>Faisal Aprianto</center>
                   </Card.Title>
-                  <Card.Text style={{ fontSize: "75%", marginTop: "20%" }}>00000042520</Card.Text>
+                  <Card.Text style={{ fontSize: "75%", marginTop: "20%" }}>
+                    00000042520
+                  </Card.Text>
                   <Card.Footer>
                     <Row>
                       <Col md={6} xs={6}>
@@ -131,13 +132,15 @@ export default class App extends React.Component {
               </Card>
             </Col>
             <Col md={3}>
-              <Card style={{ width: "100%",height: "100%" }}>
+              <Card style={{ width: "100%", height: "100%" }}>
                 <Card.Img variant="top" src={Apip} />
                 <Card.Body>
                   <Card.Title>
                     <center>Rafif Wahyu Hidayat</center>
                   </Card.Title>
-                  <Card.Text style={{ fontSize: "75%", marginTop: "20%" }}>00000041910</Card.Text>
+                  <Card.Text style={{ fontSize: "75%", marginTop: "20%" }}>
+                    00000041910
+                  </Card.Text>
                   <Card.Footer>
                     <Row>
                       <Col md={6} xs={6}>
@@ -169,17 +172,41 @@ export default class App extends React.Component {
             </Col>
           </Row>
         </Container>
-        <Row style={{marginTop: "2.5%"}}>
+        <Row style={{ marginTop: "2.5%" }}>
           <Col md={12}>
             <h1>Credits</h1>
             <h3>Special thanks to</h3>
-            <h4><a href="https://covid19.mathdro.id/api" target="_blank">Mathdroid</a></h4>
-            <h4><a href="https://apicovid19indonesia-v2.vercel.app/api" target="_blank">Reynadi</a></h4>
-            <h4><a href="https://www.flaticon.com/free-icon/indonesia_303077" target="_blank">Flaticon</a></h4>
-            <h4><a href="https://fontawesome.com/icons?d=gallery" target="_blank">Font Awesome</a></h4>
+            <h4>
+              <a href="https://covid19.mathdro.id/api" target="_blank" rel="noreferrer">
+                Mathdroid
+              </a>
+            </h4>
+            <h4>
+              <a
+                href="https://apicovid19indonesia-v2.vercel.app/api"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Reynadi
+              </a>
+            </h4>
+            <h4>
+              <a
+                href="https://www.flaticon.com/free-icon/indonesia_303077"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Flaticon
+              </a>
+            </h4>
+            <h4>
+              <a href="https://fontawesome.com/icons?d=gallery" target="_blank" rel="noreferrer">
+                Font Awesome
+              </a>
+            </h4>
           </Col>
         </Row>
-        <Link to="/"><Button style={{marginTop: "2.5%"}}><FontAwesomeIcon icon={["fas", "angle-left"]}/> Back To Home</Button></Link>
+        <Link to="/"><Button style={{ marginTop: "2.5%" }}><FontAwesomeIcon icon={["fas", "angle-left"]}/> Back To Home</Button></Link>
       </Container>
     );
   }
